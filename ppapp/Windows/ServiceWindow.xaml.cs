@@ -24,7 +24,7 @@ namespace ppapp.Windows
 
 
        
-        public ServiceWindow(User user)
+        public ServiceWindow()
         {
             InitializeComponent();
             ServicesView.ItemsSource = changsalonEntities1.GetContext().Services.ToList();
