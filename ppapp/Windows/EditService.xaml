@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ppapp.Windows"
         mc:Ignorable="d"
-        Title="EditService" Height="450" Width="800">
+        Title="" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -20,18 +20,18 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="РЕДАКТИРОВАТЬ УСЛУГУ" Grid.Column="1" FontSize="25" FontFamily="Tahoma" Margin="31,15,-165,0"/>
-        <Image  Source="/Товары салона красоты/beauty_logo.png"  Width="30" Height="30" Grid.Column="1" Margin="354,15,-184,15"/>
+        <TextBlock Text="ДОБАВИТЬ УСЛУГУ" Grid.Column="1" FontSize="25" FontFamily="Tahoma" Margin="31,15,-149,0"/>
+        <Image  Source="/Товары салона красоты/beauty_logo.png"  Width="30" Height="30" Grid.Column="1" Margin="276,15,-106,15"/>
         <TextBlock Text="Тип услуги" Grid.Row="1" FontSize="20" FontFamily="Tahoma"/>
-        <TextBox Text="{Binding type_of}" MaxLength="100" x:Name="type" Grid.Column="1" Grid.Row="1" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
+        <TextBox Text="{Binding type_of}" MaxLength="100" x:Name="type_box" Grid.Column="1" Grid.Row="1" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
         <TextBlock Text="Описание" Grid.Row="2" FontSize="20" FontFamily="Tahoma"/>
-        <TextBox Text="{Binding description_of}" MaxLength="100" x:Name="description" Grid.Column="1" Grid.Row="2" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D" />
+        <TextBox Text="{Binding description_of}" MaxLength="100" x:Name="description_box" Grid.Column="1" Grid.Row="2" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D" />
         <TextBlock Text="Продолжительность" Grid.Row="3" FontSize="20" FontFamily="Tahoma"/>
-        <TextBox Text="{Binding duration}" x:Name="daration" Grid.Column="1" Grid.Row="3" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
+        <TextBox Text="{Binding duration}" x:Name="duration_box" Grid.Column="1" Grid.Row="3" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
         <TextBlock Text="Сотрудник" Grid.Row="4" FontSize="20" FontFamily="Tahoma"/>
-        <TextBox Text="{Binding staff}" x:Name="staff" Grid.Column="1" Grid.Row="4" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
+        <TextBox Text="{Binding staff}" x:Name="staff_box" Grid.Column="1" Grid.Row="4" Margin="0,0,-390,0" BorderBrush="#FFFF4A6D"/>
         <TextBlock Text="Цена" Grid.Row="5" FontSize="20" FontFamily="Tahoma"/>
-        <TextBox Text="{Binding price}" x:Name="image_box" Grid.Row="5" Grid.Column="1"/>
+        <TextBox Text="{Binding price}" x:Name="price_box" Grid.Row="5" Grid.Column="1"/>
        
          <StackPanel Grid.Row="6" Grid.Column="1" Margin="0,10,-135,0" VerticalAlignment="Top">
             <Button x:Name="save_btn" Content="Сохранить" Click="save_btn_Click"  Background="#FFFF4A6D" Width="210" BorderBrush="{x:Null}" />

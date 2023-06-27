@@ -4,15 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1482d59088b347f3b47e73233a808003" Name="Diagram1">
-        <EntityTypeShape EntityType="changsalonModel.Products" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="changsalonModel.Staff" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="changsalonModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="changsalonModel.ProductSale" Width="1.5" PointX="2.875" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="changsalonModel.Services" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="changsalonModel.User1" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
-        <AssociationConnector Association="changsalonModel.FK_ProductSale_ProductSale" ManuallyRouted="false" />
-        <AssociationConnector Association="changsalonModel.FK_Services_Staff" ManuallyRouted="false" />
+      <Diagram DiagramId="c03ce6bed3cd4088922d22a070bd1988" Name="Diagram1">
+        <EntityTypeShape EntityType="changsalonModel.Basket_product" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.Products" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.ProductSale" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.Services" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.Staff" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="changsalonModel.User1" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="changsalonModel.FK__Basket_produ__Id__2BFE89A6" ManuallyRouted="false" />
+        <AssociationConnector Association="changsalonModel.FK__ProductSale__Id__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="changsalonModel.FK__Services__Id__32AB8735" ManuallyRouted="false" />
+        <AssociationConnector Association="changsalonModel.FK__User1__id_user__2CF2ADDF" ManuallyRouted="false" />
+        <AssociationConnector Association="changsalonModel.FK__Staff__Id__1F98B2C1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

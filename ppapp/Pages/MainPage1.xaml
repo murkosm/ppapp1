@@ -3,10 +3,10 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:ppapp.Pages"
+      xmlns:local="clr-namespace:ppapp.Pages" xmlns:materialDesing="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainPage1" Loaded="Page_Loaded" IsVisibleChanged="Page_IsVisibleChanged"> 
+      Title="Бровушка" Loaded="Page_Loaded" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,6 +14,7 @@
             <ColumnDefinition Width="23*"/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="GridMenu" HorizontalAlignment="Left" VerticalAlignment="Center" Height="450" Width="800" Grid.ColumnSpan="2"/>
+
         <Grid Grid.ColumnSpan="2">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
@@ -21,7 +22,16 @@
             <Grid Height="50" VerticalAlignment="Top" Background="#FFE1E4FF" ShowGridLines="True">
                 <StackPanel>
                     <TextBlock Text="Салон красоты “Бровушка”" FontSize="20" FontFamily="Tahoma" Margin="289,10,223,10" HorizontalAlignment="Center"/>
+
                 </StackPanel>
+                <StackPanel HorizontalAlignment="Right"  Width="50" Margin="750,0,0,0">
+                    <Button  x:Name="update_btn" Click="update_btn_Click" Height="50" BorderBrush="{x:Null}" Background="#FFE1E4FF" Foreground="{x:Null}"/>
+
+                </StackPanel>
+                <StackPanel  Width="50" Margin="750,0,0,0" HorizontalAlignment="Right">
+                    <materialDesing:PackIcon Kind="ArrowRotateLeft"  Foreground="#FFFF4A6D" Height="50" Width="50"  />
+                </StackPanel>
+
             </Grid>
             <Grid Height="35" Width="640" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
@@ -31,34 +41,34 @@
                     <ColumnDefinition Width="160"/>
 
                 </Grid.ColumnDefinitions>
-               
-                    <StackPanel>
-                        <Button x:Name="add_product_btn" Content="Добавить в корзину" Click="add_product_btn_Click" Background="#FFFF4A6D" />
 
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Button x:Name="edit_product_btn" Content="Редактировать" Click="edit_product_btn_Click"  Background="#FFFF4A6D" />
-                    </StackPanel>
-                    <StackPanel Grid.Column="3">
-                        <Button x:Name="delete_product_btn" Content="Удалить" Click="delete_product_btn_Click"  Background="#FFFF4A6D" />
-                    </StackPanel>
+                <StackPanel>
+                    <Button x:Name="add_product_btn" Content="Добавить в корзину" Click="add_product_btn_Click" Background="#FFFF4A6D" BorderBrush="{x:Null}" />
+
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Button x:Name="edit_product_btn" Content="Редактировать" Click="edit_product_btn_Click"  Background="#FFFF4A6D" BorderBrush="{x:Null}" />
+                </StackPanel>
+                <StackPanel Grid.Column="3">
+                    <Button x:Name="delete_product_btn" Content="Удалить" Click="delete_product_btn_Click"  Background="#FFFF4A6D" BorderBrush="{x:Null}" />
+                </StackPanel>
                 <StackPanel Grid.Column="2">
-                    <Button x:Name="add_btn" Content="Добавить" Click="add_btn_Click"  Background="#FFFF4A6D" />
+                    <Button x:Name="add_btn" Content="Добавить" Click="add_btn_Click"  Background="#FFFF4A6D" BorderBrush="{x:Null}" />
                 </StackPanel>
 
             </Grid>
-            
+
             <Grid Width="150" HorizontalAlignment="Left" Background="#FFC8CBE0">
                 <StackPanel>
                     <Grid Width="150" Height="50" Background="#FFFF4A6D" RenderTransformOrigin="0.5,0.5">
-
+                        <TextBlock x:Name="status" Foreground="#FFC8CBE0"/>
                     </Grid>
                     <StackPanel>
-                        <Button x:Name="ProductsMenu" Content = "Каталог товаров" FontFamily="Tahoma" Click ="ProductsMenu_Click"  Height="50" Width="152"  Background="#FFFF4A6D"/>
-                        <Button x:Name="ServiceMenu" Content="Записаться" FontFamily="Tahoma" Click ="ServiceMenu_Click"  Background="#FFFF4A6D" Height="50"/>
-                        <Button x:Name="HomeMenu" Content="На главную"  FontFamily="Tahoma" Click ="HomeMenu_Click"  Background="#FFFF4A6D" Height="50"/>
+                        <Button x:Name="ProductsMenu" Content = "История" FontFamily="Tahoma" Click ="ProductsMenu_Click"  Height="50" Width="152"  Background="#FFFF4A6D" BorderBrush="{x:Null}"/>
+                        <Button x:Name="ServiceMenu" Content="Записаться" FontFamily="Tahoma" Click ="ServiceMenu_Click"  Background="#FFFF4A6D" Height="50" BorderBrush="{x:Null}"/>
+                        <Button x:Name="HomeMenu" Content="Выход"  FontFamily="Tahoma" Click ="HomeMenu_Click"  Background="#FFFF4A6D" Height="50" BorderBrush="{x:Null}"/>
                     </StackPanel>
-                
+
                 </StackPanel>
                 <StackPanel Width="100" Height="100" Margin="25,263,25,87">
                     <Image Source="/Товары салона красоты/beauty_logo.png"/>
@@ -72,10 +82,10 @@
                 <TextBlock Text="Список товаров" FontSize="20" FontFamily="Tahoma" Margin="0,0,206,0" />
                 <TextBlock Name="CountProduct" FontSize="20" FontFamily="Tahoma" Margin="179,0,99,0"/>
                 <ComboBox Name="Sorting" Margin="264,0,0,0" SelectionChanged="Sorting_SelectionChanged">
-                    <TextBlock Text="По возрастанию" FontSize="20" FontFamily="Tahoma"/>
-                    <TextBlock Text="По убыванию" FontSize="20" FontFamily="Tahoma"/>
+                    <ComboBoxItem>По возрастанию</ComboBoxItem>
+                    <ComboBoxItem>По убыванию</ComboBoxItem>
                 </ComboBox>
-                
+
                 <TextBlock Text="Поиск:" FontSize="20" FontFamily="Tahoma" Margin="62,0,162,0" Grid.Column="1"/>
                 <TextBox x:Name="search_product" TextChanged="search_product_TextChanged" Width="115" HorizontalAlignment="Left" Background="#FFE1E4FF" Grid.Column="1" Margin="167,0,0,0"/>
             </Grid>
@@ -89,7 +99,7 @@
                         </Grid.ColumnDefinitions>
 
 
-                        <ListView  Grid.ColumnSpan="2" x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
+                        <ListView Grid.ColumnSpan="2" x:Name="MainGrid" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center"  SelectedItem="{Binding Products}">
                             <ListView.ItemsPanel>
                                 <ItemsPanelTemplate>
                                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -104,12 +114,16 @@
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
-                                        
+
                                         <Image Width="400" Height="300" Grid.Row="0" Source="{Binding Image}"/>
                                         <TextBlock FontFamily="Tahoma" Grid.Row="1" FontSize="20" Margin="5,5" Width="100" TextWrapping="Wrap" Foreground="#FFFF4A6D" Text="{Binding Count, StringFormat={}{0:N2} ₽}" />
                                         <TextBlock FontFamily="Tahoma" Grid.Row="2" Text="{Binding Product_name}"/>
                                         <TextBlock FontFamily="Tahoma"  Grid.Row="3" Text="{Binding Manufacturer}"/>
+                                        <TextBlock FontFamily="Tahoma"  Grid.Row="4" Text="В наличии:"/>
+                                        <TextBlock FontFamily="Tahoma"  Grid.Row="5" Text="{Binding Active}"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
@@ -118,6 +132,5 @@
                 </ScrollViewer>
             </Grid>
         </Grid>
-       
     </Grid>
 </Page>

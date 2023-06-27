@@ -14,16 +14,9 @@ namespace ppapp
     
     public partial class Staff
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Staff()
-        {
-            this.Services = new HashSet<Services>();
-        }
-    
         public int Id { get; set; }
         public string Name_staff { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Services> Services { get; set; }
+        public virtual Services Services { get; set; }
     }
 }

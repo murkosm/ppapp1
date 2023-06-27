@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ppapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Бровушка" Height="450" Width="800">
     <Grid>
         <Frame Name="basic" NavigationUIVisibility="Hidden"/>
     </Grid>

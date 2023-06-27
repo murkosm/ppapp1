@@ -25,5 +25,8 @@ namespace ppapp
         public Nullable<System.DateTime> datetime_user { get; set; }
         public string sex { get; set; }
         public System.DateTime birthday { get; set; }
+    
+        public virtual Basket_product Basket_product { get; set; }
+        public virtual ProductSale ProductSale { get; set; }
     }
 }

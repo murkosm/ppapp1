@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ppapp.Windows"
         mc:Ignorable="d"
-        Title="ServiceWindow" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
+        Title="Запись" Height="450" Width="800" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid>
         <StackPanel>
             <Grid>
@@ -26,9 +26,9 @@
                             <ColumnDefinition Width="266"/>
                             <ColumnDefinition Width="266"/>
                         </Grid.ColumnDefinitions>
-                        <Button x:Name="edit_btn" Click="edit_btn_Click" Content="Редактировать" Background="#FFFF4A6D"/>
+                       
                         <Button x:Name="add_btn" Click="add_btn_Click" Content="Добавить" Background="#FFFF4A6D" Grid.Column="1"/>
-                        <Button x:Name="delete_btn" Click="delete_btn_Click"  Content="Удалить" Background="#FFFF4A6D" Grid.Column="2"/>
+                       
                     </Grid>
                 </StackPanel>
 
@@ -67,10 +67,10 @@
                                         </Grid.ColumnDefinitions>
                                         <TextBlock Text="{Binding type_of}" FontSize="18" FontFamily="Tahoma" />
                                         <TextBlock Text="{Binding description_of}" FontSize="18" FontFamily="Tahoma" Grid.Column="1"/>
-                                        <TextBlock Text="{Binding duration}" FontSize="18" FontFamily="Tahoma" Grid.Column="2" Height="30" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="{Binding duration, StringFormat={}{0:N2} мин}" FontSize="18" FontFamily="Tahoma" Grid.Column="2" Height="30" VerticalAlignment="Bottom"/>
                                         <TextBlock Text="{Binding staff}" FontSize="18" FontFamily="Tahoma" Grid.Column="3"/>
-                                        <TextBlock Text="{Binding price}" FontSize="18" FontFamily="Tahoma" Grid.Column="4"/>
-                                        <Button x:Name="service_btn" Content="Записаться" Grid.Column="5" Background="#FFFF4A6D"/>
+                                        <TextBlock Text="{Binding price, StringFormat={}{0:N2} ₽}" FontSize="18" FontFamily="Tahoma" Grid.Column="4"/>
+                                        <Button x:Name="service_btn" Click="service_btn_Click_1" Content="Записаться" Grid.Column="5" Background="#FFFF4A6D"/>
                                     </Grid>
                                 </DataTemplate>
                             </ListView.ItemTemplate>

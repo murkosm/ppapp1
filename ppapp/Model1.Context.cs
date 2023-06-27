@@ -17,7 +17,6 @@ namespace ppapp
     
     public partial class changsalonEntities1 : DbContext
     {
-
         private static changsalonEntities1 _context;
         public changsalonEntities1()
             : base("name=changsalonEntities1")
@@ -25,22 +24,22 @@ namespace ppapp
         }
         public static changsalonEntities1 GetContext()
         {
-            if (_context == null);
+            if (_context == null) ;
             _context = new changsalonEntities1();
 
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Basket_product> Basket_product { get; set; }
         public virtual DbSet<Products> Products { get; set; }
-        public virtual DbSet<Staff> Staff { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<ProductSale> ProductSale { get; set; }
         public virtual DbSet<Services> Services { get; set; }
+        public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User1> User1 { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

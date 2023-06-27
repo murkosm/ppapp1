@@ -30,7 +30,7 @@ namespace ppapp.Pages
         }
         DB.AppContext appContext = new DB.AppContext();
 
-        private void registation_btn_Click(object sender, RoutedEventArgs e) // регистрируем пользователя
+        private void registation_btn_Click(object sender, RoutedEventArgs e)
         {
           
             var login = textbox_login.Text;
@@ -42,7 +42,7 @@ namespace ppapp.Pages
             var email = textbox_email.Text;
             var sex = box_sex.Text;
              DateTime dt = DateTime.Now;
-            //снова обращаемся к бд, чтобы онa создалa и сохранила новые данные
+  
             string querystring = $"INSERT INTO [User1](login_user, password_user, name_user, surname_user, patronymic, email_user, datetime_user, sex, birthday, is_admin) values('{login}', '{password}' , '{name}', '{surname}','{patronymic}', '{email}','{dt}','{sex}','{birthday}', 0)";
              
 

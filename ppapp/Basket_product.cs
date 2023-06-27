@@ -12,15 +12,12 @@ namespace ppapp
     using System;
     using System.Collections.Generic;
     
-    public partial class Products
+    public partial class Basket_product
     {
-        public string Product_name { get; set; }
-        public string Image { get; set; }
-        public string Manufacturer { get; set; }
-        public string Active { get; set; }
-        public decimal Count { get; set; }
-        public int Id_product { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Price { get; set; }
     
-        public virtual ProductSale ProductSale { get; set; }
+        public virtual User1 User1 { get; set; }
     }
 }

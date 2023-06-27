@@ -21,6 +21,7 @@ namespace ppapp
         public string staff { get; set; }
         public int price { get; set; }
     
-        public virtual Staff Staff { get; set; }
+        public virtual ProductSale ProductSale { get; set; }
+        public virtual Staff Staff1 { get; set; }
     }
 }

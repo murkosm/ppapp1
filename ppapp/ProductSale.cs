@@ -20,5 +20,7 @@ namespace ppapp
         public int Id { get; set; }
     
         public virtual Products Products { get; set; }
+        public virtual Services Services { get; set; }
+        public virtual User1 User1 { get; set; }
     }
 }

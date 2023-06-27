@@ -25,9 +25,12 @@ namespace ppapp.Windows
     public partial class EditAdd : Window
     {
         DB.AppContext appContext = new DB.AppContext();
+
+        Products product = new Products();
         public EditAdd()
         {
             InitializeComponent();
+            DataContext = product;
         }
         private void image_btn_Click(object sender, RoutedEventArgs e)
         {

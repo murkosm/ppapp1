@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using ppapp.Windows;
 
 namespace ppapp.Pages
 {
@@ -103,7 +104,8 @@ namespace ppapp.Pages
             {
                 var user = new User(table.Rows[0].ItemArray[1].ToString(), Convert.ToBoolean(table.Rows[0].ItemArray[2]));
                 ClassFrame.authFrame.Navigate(new MainPage1(user));
-
+                //MainPage main = new MainPage(user);
+                //main.Show(); 
 
             }
             else

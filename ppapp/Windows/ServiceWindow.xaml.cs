@@ -24,61 +24,48 @@ namespace ppapp.Windows
 
 
        
+        public ServiceWindow(User user)
+        {
+            _user = user;
+            InitializeComponent();
+            ServicesView.ItemsSource = changsalonEntities1.GetContext().Services.ToList();
+        }
         public ServiceWindow()
         {
+         
             InitializeComponent();
             ServicesView.ItemsSource = changsalonEntities1.GetContext().Services.ToList();
         }
 
         private void isAdmin()
         {
-            edit_btn.IsEnabled = _user.is_admin;
+
             add_btn.IsEnabled = _user.is_admin;
-            delete_btn.IsEnabled = _user.is_admin;
+            
         }
         private void service_btn_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void edit_btn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var SelectedItem = ServicesView.SelectedItem as Services;
-                if (SelectedItem != null)
-                {
-                    EditService editService = new EditService();
-                    Close();
-                    editService.Show();
-
-                }
-                else
-                {
-                    throw new Exception("Не выбрана запись");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
+      
 
         private void add_btn_Click(object sender, RoutedEventArgs e)
         {
-            EditService editService = new EditService();
+            EditService editService = new EditService(_user);
             Close();
             editService.Show();
         }
 
-        private void delete_btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             isAdmin();
+        }
+
+        private void service_btn_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Вы записаны, сообщение с подробной информацией придет вам на электронную почту!", "Уведомление о записи", MessageBoxButton.OK);
         }
     }
 }
